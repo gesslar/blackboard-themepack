@@ -467,7 +467,7 @@
     "settings.rowHoverBackground": "#3655695f",
     "settings.focusedRowBackground": "#181818",
     "settings.focusedRowBorder": "#65859b80",
-    "settings.textInputBackground": "#3b596e80",
+    "settings.textInputBackground": "#181818",
     "settings.textInputForeground": "#bebebe",
     "settings.textInputBorder": "#4b6b80",
     "settings.numberInputBackground": "#3b596e80",
