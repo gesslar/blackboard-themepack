@@ -715,7 +715,7 @@ theme:
       rowHoverBackground: $std.bg.hover.whisper
       focusedRowBackground: lighten($std.bg.panel.innermost.active, 25)
       focusedRowBorder: $std.outline.faint
-      textInputBackground: $control.bg.base
+      textInputBackground: lighten($std.bg.panel.innermost.active, 25)
       textInputForeground: $control.fg.base
       textInputBorder: $control.outline.base
       numberInputBackground: $control.bg.base
