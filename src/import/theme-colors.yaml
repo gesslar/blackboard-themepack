@@ -243,7 +243,7 @@ theme:
     input:
       foreground: $control.fg.base
       placeholderForeground: $std.fg.accent.secondary
-      background: $control.bg.base
+      background: lighten($std.bg.panel.innermost.active, 25)
       border: $control.outline.base
     inputOption: # These are buttons!
       activeForeground: $button.foreground

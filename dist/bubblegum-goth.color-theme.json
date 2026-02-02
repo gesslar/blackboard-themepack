@@ -156,7 +156,7 @@
     "dropdown.border": "#d65ec0",
     "input.foreground": "#bebebe",
     "input.placeholderForeground": "#983d86",
-    "input.background": "#bc44a780",
+    "input.background": "#141414",
     "input.border": "#d65ec0",
     "inputOption.activeForeground": "#bebebe",
     "inputOption.activeBackground": "#bc44a780",
