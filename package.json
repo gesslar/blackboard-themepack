@@ -8,19 +8,19 @@
   "engines": {
     "vscode": ">=1.50.0"
   },
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "npm@10.28.2",
   "scripts": {
-    "watch": "pnpx @gesslar/sassy build -wo ./dist ./src/*.yaml",
-    "build": "pnpx @gesslar/sassy build -o ./dist ./src/*.yaml",
-    "lint-blackboard": "pnpx @gesslar/sassy lint ./src/blackboard.yaml",
-    "package": "pnpx @gesslar/sassy build -o ./dist ./src/*.yaml && pnpm dlx @vscode/vsce package --no-dependencies --skip-license",
-    "publish:vsce": "pnpm run package && xdg-open https://marketplace.visualstudio.com/manage/publishers/gesslar",
-    "publish:ovsx": "pnpm run package && xdg-open https://open-vsx.org/user-settings/extensions",
-    "update": "pnpm self-update && pnpx npm-check-updates -u && pnpm install",
+    "watch": "npx @gesslar/sassy build -wo ./dist ./src/*.yaml",
+    "build": "npx @gesslar/sassy build -o ./dist ./src/*.yaml",
+    "lint-blackboard": "npx @gesslar/sassy lint ./src/blackboard.yaml",
+    "package": "npx @gesslar/sassy build -o ./dist ./src/*.yaml && npx @vscode/vsce package --no-dependencies --skip-license",
+    "publish:vsce": "npm run package && xdg-open https://marketplace.visualstudio.com/manage/publishers/gesslar",
+    "publish:ovsx": "npm run package && xdg-open https://open-vsx.org/user-settings/extensions",
+    "update": "npx npm-check-updates -u && npm install",
     "pr": "gt submit -p --ai",
-    "patch": "pnpm version patch",
-    "minor": "pnpm version minor",
-    "major": "pnpm version major"
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major"
   },
   "categories": [
     "Themes"
