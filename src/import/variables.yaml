@@ -17,8 +17,8 @@ vars:
       status:
         success: $std.fg.base
         warning: $std.fg.base
-        info: $status.info
-        error: $status.error
+        info: $std.fg.base
+        error: $std.fg.base
       badge: lighten($accent.base, 25)
 
     bg:
