@@ -1,410 +1,485 @@
+# theme-tokenColors-dark.yaml
+
+palette:
+  tc:
+    comment: oklch(0.5 0 25)
+    markupBlockquote: $$tc.comment
+
+    keyword: oklch(0.6713 0.0672 245.54) # blue
+    storage: oklch(0.6713 0.0672 245.54) # blue
+    storageModifier: oklch(0.6713 0.0672 245.54) # blue
+    storageType: oklch(0.6713 0.0672 245.54) # blue
+    operatorWord: oklch(0.6713 0.0672 245.54) # blue
+    operator: oklch(0.748 0 0) # dark white
+    controlFlow: oklch(0.7024 0.0679 329.42) # light pink
+
+    variable: oklch(0.6816 0.0692 232.08) # teal-y blue
+    property: oklch(0.6816 0.0692 232.08) # teal-y blue
+    selfReference: oklch(0.6713 0.0672 245.54) # blue
+
+    functionName: oklch(0.715 0.0656 107.67) # pale yellow
+
+    type: oklch(0.6849 0.0856 177.18) # teal-y green
+
+    languageConstant: oklch(0.6713 0.0672 245.54) # blue
+    numericConstant: oklch(0.6772 0.0844 126.69) # pale green
+    enumConstant: oklch(0.6644 0.0898 226.28) # another blue
+    characterConstant: oklch(0.6713 0.0672 245.54) # blue
+    escapeSequence: oklch(0.8048 0.0541 85.14) # light orange
+    unit: oklch(0.6772 0.0844 126.69) # pale green
+
+    string: oklch(0.6948 0.0606 43.17) # salmon ?
+    interpolation: oklch(0.6713 0.0672 245.54) # blue
+
+    tagName: oklch(0.6713 0.0672 245.54) # blue
+    tagPunctuation: oklch(0.5999 0 0) # mid grey
+    cssSelector: oklch(0.8048 0.0541 85.14) # light orange
+    cssProperty: oklch(0.6816 0.0692 232.08) # teal-y blue
+    cssValue: oklch(0.6948 0.0606 43.17) # salmon ?
+
+    markupStrong: oklch(0.6713 0.0672 245.54) # blue
+    markupEmphasis: oklch(0.7024 0.0679 329.42) # light pink
+    markupInserted: oklch(0.6772 0.0844 126.69) # pale green
+    markupDeleted: oklch(0.6948 0.0606 43.17) # salmon ?
+    markupChanged: oklch(0.6713 0.0672 245.54) # blue
+    markupList: oklch(0.5978 0.0892 260.52) # yet another blue
+    markupHeader: oklch(0.5527 0.1321 264.052) # more blue, but darker and more offensive
+
+    preprocessor: oklch(0.6713 0.0672 245.54) # blue
+    diffHeader: oklch(0.6713 0.0672 245.54) # blue
+
+    regexpLiteral: oklch(0.528 0.0736 281.68) # there's a lot of blue in this theme, this one very pale, almost smokey
+    regexpString: oklch(0.5677 0.0805 21.41) # reddish pink
+    regexpGroup: oklch(0.6948 0.0606 43.17) # salmon ?
+    regexpCharClass: oklch(0.5677 0.0805 21.41) # reddish pink
+    regexpQuantifier: oklch(0.8048 0.0541 85.14) # light orange
+    regexpOperator: oklch(0.715 0.0656 107.67) # pale yellow
+
+    gitRebaseCommand: oklch(0.6816 0.0692 232.08) # teal-y blue
+    gitCommitSha: oklch(0.6772 0.0844 126.69) # pale green
+
+    label: oklch(0.8328 0 0) # a lighter grey
+    invalid: oklch(0.6484 0.2098 25.22) # almost clown-nose red
+    default: oklch(0.748 0 0) # dark white
+
 theme:
   tokenColors:
-    - settings:
-        foreground: $scope.text
-
-    # #########################################################################
-    # Makefile
-    # #########################################################################
-
-    - name: Makefile Prerequisites
-      scope: meta.scope.prerequisites.makefile
-      settings:
-        foreground: $scope.declaration
-    - name: Makefile Recipe
-      scope: meta.scope.recipe.makefile
-      settings:
-        foreground: $scope.constant
-
-    # #########################################################################
-    # Markdown/Markup
-    # #########################################################################
-
-    - name: Markdown bold
-      scope: markup.bold.markdown
-      settings:
-        fontStyle: bold
-
-    - name: Markdown italic
-      scope: markup.italic.markdown
+    - name: Emphasis
+      scope: emphasis
       settings:
         fontStyle: italic
 
-    - name: Markdown Header
+    - name: Strong
+      scope: strong
+      settings:
+        fontStyle: bold
+
+    - name: Header
+      scope: header
+      settings:
+        foreground: $$tc.markupHeader
+
+    - name: Comment
+      scope: comment
+      settings:
+        foreground: $$tc.comment
+
+    - name: Language constants
+      scope: constant.language
+      settings:
+        foreground: $$tc.languageConstant
+
+    - name: Numeric constants and exponents
+      scope:
+        - constant.numeric
+        - keyword.operator.plus.exponent
+        - keyword.operator.minus.exponent
+      settings:
+        foreground: $$tc.numericConstant
+
+    - name: Regexp constants
+      scope: constant.regexp
+      settings:
+        foreground: $$tc.regexpLiteral
+
+    - name: CSS/Less element selectors
+      scope:
+        - entity.name.tag.css
+        - entity.name.tag.less
+      settings:
+        foreground: $$tc.cssSelector
+
+    - name: HTML/XML tag names
+      scope: entity.name.tag
+      settings:
+        foreground: $$tc.tagName
+
+    - name: CSS/Less/SCSS attribute selectors
+      scope:
+        - entity.other.attribute-name.class
+        - entity.other.attribute-name.id
+        - entity.other.attribute-name.parent-selector
+        - entity.other.attribute-name.parent.less
+        - entity.other.attribute-name.pseudo-class
+        - entity.other.attribute-name.pseudo-element
+        - entity.other.attribute-name.scss
+      settings:
+        foreground: $$tc.cssSelector
+
+    - name: Attribute names
+      scope: entity.other.attribute-name
+      settings:
+        foreground: $$tc.property
+
+    - name: Invalid tokens
+      scope: invalid
+      settings:
+        foreground: $$tc.invalid
+
+    - name: "Markup: underline"
+      scope: markup.underline
+      settings:
+        fontStyle: underline
+
+    - name: "Markup: bold"
+      scope: markup.bold
+      settings:
+        fontStyle: bold
+        foreground: $$tc.markupStrong
+
+    - name: "Markup: heading"
       scope: markup.heading
       settings:
         fontStyle: bold
+        foreground: $$tc.markupStrong
 
-    # #########################################################################
-    # General scopes that apply across many/most languages agnostically.
-    #
-    # This is last because of specificity by order of appearance. Scopes
-    # defined here will not match if there is a more language-specific match
-    # earlier. You want those to match because they're more unique to that
-    # language.
-    # #########################################################################
-
-    - name: Plain Text
-      scope: meta.paragraph, text.html, meta.jsx.children, doctype
+    - name: "Markup: italic"
+      scope: markup.italic
       settings:
-        foreground: $scope.plainText
-
-    - name: Control Keywords (if/for/return/etc)
-      scope: keyword.control, meta.at-rule,
-        meta.var.expr keyword.control.export, keyword.other.using,
-        meta.preprocessor, keyword.other.namespace, keyword.preprocessor,
-        keyword.other.special-method, def.meta, meta.require,
-        keyword.other.crate, meta.use, keyword.package, keyword.function,
-        keyword.interface, entity.name.goto-label
-      settings:
-        foreground: $scope.function
-
-    - name: Imports, inherits, etc
-      scope: keyword.control.import, keyword.control.from,
-        meta.preprocessor.include, meta.import
-      settings:
-        foreground: $scope.function
         fontStyle: italic
+        foreground: $$tc.markupEmphasis
 
-    - name: Self/This/etc
-      scope: variable.parameter.function.language.special.self,
-        variable.language.special.self, this.class.meta, storage.modifier.this
+    - name: "Markup: strikethrough"
+      scope: markup.strikethrough
       settings:
-        foreground: $scope.selfRef
+        fontStyle: strikethrough
 
-    - name: Quoted Strings
-      scope: string.quoted, string.unquoted.heredoc,
-        jsx.children.objectliteral.expression.embedded.tag.string.block,
-        meta.string-contents
+    - name: "Markup: inserted"
+      scope: markup.inserted
       settings:
-        foreground: $scope.string
+        foreground: $$tc.markupInserted
 
-    - name: Functions/Methods
-      scope: entity.name.function, meta.definition.method,
-        support.function, function.meta, function-call
+    - name: "Markup: deleted"
+      scope: markup.deleted
       settings:
-        foreground: $scope.function
+        foreground: $$tc.markupDeleted
 
-    - name: Code Snippets
-      scope: markup.inline.raw, markup.fenced_code.block
+    - name: "Markup: changed"
+      scope: markup.changed
       settings:
-        foreground: $scope.code
+        foreground: $$tc.markupChanged
 
-    - name: Embedded Languages
-      scope: source.sql.embedded, source.js.embedded, source.css.embedded
+    - name: "Markdown: blockquote marker"
+      scope: punctuation.definition.quote.begin
       settings:
-        foreground: $scope.embeddedLanguage
+        foreground: $$tc.markupBlockquote
 
-    - name: Links
-      scope: string.other.link.description, meta.image.inline,
-        meta.link, string.other.link.title
+    - name: "Markdown: list marker"
+      scope: punctuation.definition.list.begin
       settings:
-        foreground: $scope.link
+        foreground: $$tc.markupList
 
-    - name: Storage Modifiers (async, const, etc)
-      scope: storage.modifier, storage.type.accessor
+    - name: "Markup: inline code"
+      scope: markup.inline.raw
       settings:
-        foreground: $scope.storage.modifier
+        foreground: $$tc.string
 
-    - name: Storage types
-      scope: entity.name.variable.enum-member, keyword.declaration.abstract,
-        keyword.declaration.class, keyword.declaration.enum,
-        keyword.declaration.extends, keyword.declaration.extension,
-        keyword.declaration.get, keyword.declaration.implements,
-        keyword.declaration.on, keyword.declaration.set,
-        keyword.declaration.typedef, keyword.declaration.with,
-        keyword.other.class, keyword.other.delegate,
-        keyword.other.enum, keyword.other.event, keyword.other.fn,
-        keyword.other.interface, keyword.struct, keyword.type,
-        meta.namespace.declaration, storage.type.annotation,
-        storage.type.numeric, declaration.keyword
+    - name: Brackets of XML/HTML tags
+      scope: punctuation.definition.tag
       settings:
-        foreground: $scope.declaration
+        foreground: $$tc.tagPunctuation
 
-    - name: Storage Modifiers (async, const, etc) - to not mask
-      scope: keyword.other
+    - name: Preprocessor strings
+      scope: meta.preprocessor.string
       settings:
-        foreground: $scope.storage.modifier
+        foreground: $$tc.string
 
-    - name: Storage
-      scope: support.module.node, storage.type.primitive.var
+    - name: Preprocessor numerics
+      scope: meta.preprocessor.numeric
       settings:
-        foreground: $scope.keyword
+        foreground: $$tc.numericConstant
 
-    - name: Number
-      scope: constant.numeric, entity.other.keyframe-offset
+    - name: Preprocessor directives
+      scope:
+        - meta.preprocessor
+        - entity.name.function.preprocessor
       settings:
-        foreground: $scope.number
+        foreground: $$tc.preprocessor
 
-    - name: Variables
-      scope: var-single-variable.variable.readwrite.other.meta,
-        support.variable.object.process, entity.name.variable,
-        class.variable, instance.variable, global.variable
+    - name: Python dictionary keys
+      scope: meta.structure.dictionary.key.python
       settings:
-        foreground: $scope.variable
+        foreground: $$tc.property
 
-    - name: Built-in constant
-      scope: support.variable.object.node, support.constant,
-        constant.character.format.placeholder.other
+    - name: Diff header
+      scope: meta.diff.header
       settings:
-        foreground: $scope.constant
+        foreground: $$tc.diffHeader
 
-    - name: Module Name
-      scope: module.meta, function.object.block.variable.meta,
-        entity.name.type.module, support.type.object.module,
-        entity.name.type.namespace, entity.name.namespace,
-        entity.name.module, entity.name.package
+    - name: Regular expression strings
+      scope: string.regexp
       settings:
-        foreground: $scope.namespace
+        foreground: $$tc.regexpString
 
-    - name: Type Names
-      scope: storage.type.built-in,
-        meta.type.annotation, meta.argument-type, meta.protocol-list
+    - name: Reset string interpolation expression
+      scope:
+        - meta.template.expression
       settings:
-        foreground: $scope.types
+        foreground: $$tc.default
 
-    - name: Storage types - to not mask
+    - name: CSS property names
+      scope:
+        - support.type.vendored.property-name
+        - support.type.property-name
+        - source.css variable
+      settings:
+        foreground: $$tc.cssProperty
+
+    - name: Word-like operators
+      scope:
+        - keyword.operator.new
+        - keyword.operator.expression
+        - keyword.operator.cast
+        - keyword.operator.sizeof
+        - keyword.operator.alignof
+        - keyword.operator.typeid
+        - keyword.operator.alignas
+        - keyword.operator.instanceof
+        - keyword.operator.logical
+        - keyword.operator.wordlike
+      settings:
+        foreground: $$tc.operatorWord
+
+    - name: Unit suffixes
+      scope: keyword.other.unit
+      settings:
+        foreground: $$tc.unit
+
+    - name: Git rebase commands
+      scope: support.function.git-rebase
+      settings:
+        foreground: $$tc.gitRebaseCommand
+
+    - name: Git commit SHA
+      scope: constant.sha.git-rebase
+      settings:
+        foreground: $$tc.gitCommitSha
+
+    - name: "Java: import and package identifiers"
+      scope:
+        - storage.modifier.import.java
+        - variable.language.wildcard.java
+        - storage.modifier.package.java
+      settings:
+        foreground: $$tc.default
+
+    - name: this.self
+      scope: variable.language
+      settings:
+        foreground: $$tc.selfReference
+
+    - name: Function declarations
+      scope:
+        - entity.name.function
+        - support.function
+        - support.constant.handlebars
+        - entity.name.operator.custom-literal
+      settings:
+        foreground: $$tc.functionName
+
+    - name: Types declaration and references
+      scope:
+        - support.class
+        - support.type
+        - entity.name.type
+        - entity.name.namespace
+        - entity.other.attribute
+        - entity.name.scope-resolution
+        - entity.name.class
+        - storage.type.numeric
+        - storage.type.byte
+        - storage.type.boolean
+        - storage.type.string
+        - storage.type.uintptr
+        - storage.type.error
+        - storage.type.rune
+        - storage.type.cs
+        - storage.type.generic
+        - storage.type.modifier
+        - storage.type.variable
+        - storage.type.annotation
+        - storage.type.java
+        - storage.type.object.array
+        - storage.type.primitive.array
+        - storage.type.primitive
+        - storage.type.token
+      settings:
+        foreground: $$tc.type
+
+    - name: Storage type keyword
       scope: storage.type
       settings:
-        foreground: $scope.declaration
+        foreground: $$tc.storageType
 
-    - name: Storage - to not mask
-      scope: storage
+    - name: Type expressions and built-in constants
+      scope:
+        - meta.type.cast.expr
+        - meta.type.new.expr
+        - support.constant.math
+        - support.constant.dom
+        - support.constant.json
+        - entity.other.inherited-class
+        - punctuation.separator.namespace
       settings:
-        foreground: $scope.keyword
+        foreground: $$tc.type
 
-    - name: String Interpolation Begin and End
-      scope: begin.expression.string, end.expression.string,
-        punctuation.definition.template-expression.begin,
-        punctuation.definition.template-expression.end,
-        embedded.begin.string.punctuation,
-        embedded.end.string.punctuation
+    - name: Constants and enums
+      scope:
+        - variable.other.constant
+        - variable.other.enummember
       settings:
-        foreground: $scope.interpolation
+        foreground: $$tc.enumConstant
 
-    - name: String Interpolation Body
-      scope: expression.string, embedded.string.punctuation
+    - name: Object literal keys
+      scope:
+        - meta.object-literal.key
       settings:
-        foreground: $scope.interpolation
+        foreground: $$tc.property
 
-    - name: Parameters
-      scope: variable.parameter, function.parameters.entity.name.meta,
-        variable.other.macro.argument,
-        meta.function-call meta.function-call.arguments
+    - name: CSS property values
+      scope:
+        - support.constant.property-value
+        - support.constant.font-name
+        - support.constant.media-type
+        - support.constant.media
+        - constant.other.color.rgb-value
+        - constant.other.rgb-value
+        - support.constant.color
       settings:
-        foreground: $scope.parameter
+        foreground: $$tc.cssValue
 
-    # #########################################################################
-    # Classes
-    # #########################################################################
-
-    - name: Class Super
-      scope: super.meta, support.class.super, meta.inheritance-clause
+    - name: "Regexp: groups and assertions"
+      scope:
+        - punctuation.definition.group.regexp
+        - punctuation.definition.group.assertion.regexp
+        - punctuation.definition.character-class.regexp
+        - punctuation.character.set.begin.regexp
+        - punctuation.character.set.end.regexp
+        - keyword.operator.negation.regexp
+        - support.other.parenthesis.regexp
       settings:
-        foreground: $scope.selfRef
+        foreground: $$tc.regexpGroup
 
-    - name: Class names
-      scope: entity.name.class, support.class, entity.name.type.class,
-        meta.function-call.static, meta.function-call.object, meta.function-call,
-        support.other.namespace.use
+    - name: "Regexp: character classes"
+      scope:
+        - constant.character.character-class.regexp
+        - constant.other.character-class.set.regexp
+        - constant.other.character-class.regexp
+        - constant.character.set.regexp
       settings:
-        foreground: $scope.class
+        foreground: $$tc.regexpCharClass
 
-    - name: Inherited Class
-      scope: entity.other.inherited-class
+    - name: "Regexp: alternation and anchors"
+      scope:
+        - keyword.operator.or.regexp
+        - keyword.control.anchor.regexp
       settings:
-        foreground: $scope.class
+        foreground: $$tc.regexpOperator
 
-    # #########################################################################
-    # Tagging/Attributes
-    # #########################################################################
-
-    - name: Tag name
-      scope: punctuation.definition.tag, entity.name.tag
+    - name: "Regexp: quantifiers"
+      scope: keyword.operator.quantifier.regexp
       settings:
-        foreground: $scope.punctuation
+        foreground: $$tc.regexpQuantifier
 
-    - name: Tag attribute
-      scope: entity.other.attribute-name, meta.tag.attributes,
-        name.tag.out.plain.unquoted.string.entity
+    - name: Escape sequences
+      scope: constant.character.escape
       settings:
-        foreground: $scope.attribute
+        foreground: $$tc.escapeSequence
 
-    # #########################################################################
-    # RegExp
-    # #########################################################################
-
-    - name: RegExp Group Punctuation
-      scope: punctuation.definition.group.regexp,
-        punctuation.definition.group.no-capture.regexp
+    - name: Character constants
+      scope:
+        - constant.character
+        - constant.other.option
       settings:
-        foreground: $scope.punctuation
+        foreground: $$tc.characterConstant
 
-    - name: RegExp Character Class Punctuation
-      scope: punctuation.definition.character-class.regexp
+    - name: Labels
+      scope: entity.name.label
       settings:
-        foreground: $scope.punctuation
+        foreground: $$tc.label
 
-    - name: RegExp Character Class Constants
-      scope: constant.other.character-class.regexp,
-        constant.other.character-class.set.regexp
+    - name: Control flow / Special keywords
+      scope:
+        - keyword.control
+        - source.cpp keyword.operator.new
+        - keyword.operator.delete
+        - keyword.other.using
+        - keyword.other.directive.using
+        - keyword.other.operator
+        - entity.name.operator
       settings:
-        foreground: $scope.constant
+        foreground: $$tc.controlFlow
 
-    - name: RegExp Numeric Escapes
-      scope: constant.character.numeric.regexp
+    - name: String interpolation
+      scope:
+        - punctuation.definition.template-expression.begin
+        - punctuation.definition.template-expression.end
+        - punctuation.section.embedded
       settings:
-        foreground: $scope.number
+        foreground: $$tc.interpolation
 
-    # #########################################################################
-    # Properties
-    # #########################################################################
-
-    - name: Property Names
-      scope: support.type.property-name, support.type.vendored.property-name,
-        meta.property-name, variable.other.property, support.variable.property,
-        property.field.declaration.class.meta
+    - name: Strings
+      scope:
+        - string
+        - meta.embedded.assembly
       settings:
-        foreground: $scope.property
+        foreground: $$tc.string
 
-    # #########################################################################
-    # Operators for all of the languages
-    # #########################################################################
+    - name: Embedded content
+      scope:
+        - meta.embedded
+        - string meta.image.inline.markdown
+      settings:
+        foreground: $$tc.default
+
+    - name: Variable and parameter name
+      scope:
+        - variable
+        - meta.definition.variable.name
+        - support.variable
+        - entity.name.variable
+        - constant.other.placeholder
+      settings:
+        foreground: $$tc.variable
+
+    - name: Storage modifiers
+      scope:
+        - storage.modifier
+        - keyword.operator.noexcept
+      settings:
+        foreground: $$tc.storageModifier
 
     - name: Operators
-      scope: keyword.operator.new, keyword.operator.expression,
-        keyword.operator.word.new, keyword.operator.namespace,
-        keyword.operator.borrow.and,
-        keyword.operator.dereference,
-        keyword.operator.key-value,
-        keyword.operator.access.dot,
-        keyword.operator.bitwise,
-        keyword.operator.address
+      scope: keyword.operator
       settings:
-        foreground: $scope.operator
+        foreground: $$tc.operator
 
-    - name: Arithmetic Operators
-      scope: keyword.operator.arithmetic
-      settings:
-        foreground: $scope.operator
-
-    - name: Assignment Operator
-      scope: keyword.operator.assignment, punctuation.separator.key-value
-      settings:
-        foreground: $scope.operator
-
-    - name: Logical Operators
-      scope: keyword.operator.logical, keyword.operator.or.regexp,
-        keyword.operator.negation.regexp
-      settings:
-        foreground: $scope.operator
-        fontStyle: bold
-
-    - name: General Keyword Operators
-      scope: keyword.operator, operator
-      settings:
-        foreground: $scope.operator
-
-    # #########################################################################
-    # Universal fallback rules for common patterns
-    # #########################################################################
-
-    - name: Type Names
-      scope: entity.name.type, support.type
-      settings:
-        foreground: $scope.types
-
-    - name: Universal Comments
-      scope: comment, comment source, punctuation.definition.comment
-      settings:
-        foreground: $scope.comment
-        fontStyle: italic
-
-    - name: Constants
-      scope: constant.other, constant.character, variable.other.constant,
-        character.constant.entity
-      settings:
-        foreground: $scope.constant
-
-    - name: Universal Self References
-      scope: variable.language.self, variable.language.this,
-        variable.language.base, variable.language.super
-      settings:
-        foreground: $scope.selfRef
-
-    - name: Universal Booleans
-      scope: constant.language.boolean, constant.language.null
-      settings:
-        foreground: $scope.boolean
-
-    - name: Universal String Interpolation
-      scope: punctuation.definition.template-expression,
-        string.interpolated.expression, punctuation.definition.variable,
-        punctuation.section.embedded.begin, punctuation.section.embedded.end
-      settings:
-        foreground: $scope.interpolation
-
-    - name: Universal Punctuation
-      scope: punctuation, begin.brace, end.brace
-      settings:
-        foreground: $scope.punctuation
-
-    - name: Universal Types Fallback
-      scope: namespace, class, enum, interface, struct, typeParameter, type
-      settings:
-        foreground: $scope.types
-
-    - name: Universal Callables Fallback
-      scope: function, method, macro
-      settings:
-        foreground: $scope.function
-
-    - name: Universal Identifiers Fallback
-      scope: parameter, variable, property, enumMember, decorator, event
-      settings:
-        foreground: $scope.variable
-
-    - name: Universal Literals Fallback
-      scope: number, regexp
-      settings:
-        foreground: $scope.number
-
-    - name: Universal Keywords Fallback
-      scope: keyword.declaration, label
-      settings:
-        foreground: $scope.keyword
-
-    - name: Fallback - Punctuation styling
-      scope: punctuation, keyword.operator.logical, label.text
-      settings:
-        fontStyle: bold italic
-
-    # #########################################################################
-    # Final Fallbacks - Broadest possible scopes (NEVER override anything)
-    # These are last resort matchers for any unmatched tokens
-    # #########################################################################
-
-    - name: Final Fallback - Generic Keyword
+    - name: Keywords
       scope: keyword
       settings:
-        foreground: $scope.keyword
+        foreground: $$tc.keyword
 
-    - name: Final Fallback - Generic Constant
-      scope: constant
+    - name: Storage
+      scope: storage
       settings:
-        foreground: $scope.constant
-
-    - name: Final Fallback - Generic Constant
-      scope: string
-      settings:
-        foreground: $scope.string
-
-    - name: Final Fallback - Variables
-      scope: variable
-      settings:
-        foreground: $scope.variable
-
-    - name: Final Fallback - Base Source
-      scope: source
-      settings:
-        foreground: $scope.plainText
+        foreground: $$tc.storage

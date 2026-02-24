@@ -1,4 +1,5 @@
-# Theme Config
+# Theme Config - bubblegum-goth
+
 config:
   $schema: vscode://schemas/color-theme
   name: bubblegum-goth
@@ -8,7 +9,6 @@ config:
     - ./import/palette-$(type).yaml
     - ./import/variables.yaml
     - ./import/theme-colors.yaml
-    - ./import/scope-$(type).yaml
     - ./import/theme-tokenColors-$(type).yaml
     - ./import/theme-semanticTokenColors-$(type).yaml
 

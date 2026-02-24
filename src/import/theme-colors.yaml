@@ -1,3 +1,5 @@
+# theme-colors.yaml
+
 theme:
   colors:
     window:
@@ -470,14 +472,14 @@ theme:
       background: $std.bg.accent.whisper
       border: $std.outline.strong
 
-    # Bracket Pair Colorization
+    # Bracket Pair Colourization
     editorBracketHighlight:
-      foreground1: fade($level.1, .5)
-      foreground2: fade($level.2, .5)
-      foreground3: fade($level.3, .5)
-      foreground4: fade($level.4, .5)
-      foreground5: fade($level.5, .5)
-      foreground6: fade($level.6, .5)
+      foreground1: fade($level.1, .2)
+      foreground2: fade($level.2, .2)
+      foreground3: fade($level.3, .2)
+      foreground4: fade($level.4, .2)
+      foreground5: fade($level.5, .2)
+      foreground6: fade($level.6, .2)
       unexpectedBracket:
         foreground: $std.highlight.bg.error
 
