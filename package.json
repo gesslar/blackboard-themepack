@@ -8,12 +8,12 @@
   "engines": {
     "vscode": ">=1.50.0"
   },
-  "packageManager": "npm@11.10.1",
+  "packageManager": "npm@11.11.0",
   "scripts": {
     "watch": "npx @gesslar/sassy build -wo ./dist ./src/*.yaml",
     "build": "npx @gesslar/sassy build -o ./dist ./src/*.yaml",
     "lint-blackboard": "npx @gesslar/sassy lint ./src/blackboard.yaml",
-    "package": "npx @gesslar/sassy build -o ./dist ./src/*.yaml && npx @vscode/vsce package --no-dependencies --skip-license",
+    "package": "npx @gesslar/sassy build -o ./dist ./src/*.yaml && npx @vscode/vsce package --no-dependencies --skip-license -o vsix/",
     "publish:vsce": "npm run package && xdg-open https://marketplace.visualstudio.com/manage/publishers/gesslar",
     "publish:ovsx": "npm run package && xdg-open https://open-vsx.org/user-settings/extensions",
     "update": "npx npm-check-updates -u && npm install",
@@ -37,7 +37,7 @@
       },
       {
         "label": "Bubblegum Goth",
-        "description": "*POP* goes the emo",
+        "description": "*POP* goes the emo.",
         "id": "bubblegum-goth",
         "uiTheme": "vs-dark",
         "path": "dist/bubblegum-goth.color-theme.json"
@@ -48,6 +48,27 @@
         "id": "corporate",
         "uiTheme": "vs-dark",
         "path": "dist/corporate.color-theme.json"
+      },
+      {
+        "label": "Blackboard - Hushed",
+        "description": "*paff* *paff* *paff*",
+        "id": "blackboard-hushed",
+        "uiTheme": "vs-dark",
+        "path": "dist/blackboard-hushed.color-theme.json"
+      },
+      {
+        "label": "Bubblegum Goth - Hushed",
+        "description": "*dramatic sigh*",
+        "id": "bubblegum-goth-hushed",
+        "uiTheme": "vs-dark",
+        "path": "dist/bubblegum-goth-hushed.color-theme.json"
+      },
+      {
+        "label": "Corporate - Hushed",
+        "description": "If this doesn't work, try adding a chart.",
+        "id": "corporate-hushed",
+        "uiTheme": "vs-dark",
+        "path": "dist/corporate-hushed.color-theme.json"
       }
     ]
   },

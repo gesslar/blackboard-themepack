@@ -13,7 +13,7 @@ theme:
     selection:
       background: $std.bg.accent.faint
     descriptionForeground: $std.fg.inactive
-    errorForeground: $std.fg.status.error
+    errorForeground: complement($std.fg.status.error)
 
     icon:
       foreground: $std.fg.base
@@ -92,8 +92,8 @@ theme:
     # Source Control Graph colors
     scmGraph:
       historyItemHoverLabelForeground: $std.fg.hover
-      historyItemHoverAdditionsForeground: $std.fg.status.success
-      historyItemHoverDeletionsForeground: $std.fg.status.error
+      historyItemHoverAdditionsForeground: $status.added
+      historyItemHoverDeletionsForeground: $status.error
       # Default label colors (hover background box)
       historyItemHoverDefaultLabelForeground: $std.fg.hover
       historyItemHoverDefaultLabelBackground: $std.bg.hover.base
@@ -146,7 +146,7 @@ theme:
       offlineHoverForeground: invert($statusBarItem.prominentHoverForeground)
       offlineHoverBackground: invert($statusBarItem.prominentHoverBackground)
       # Error State Items
-      errorForeground: $std.fg.base
+      errorForeground: $std.fg.status.error
       errorBackground: $std.bg.status.error
       errorHoverForeground: $statusBarItem.errorForeground
       errorHoverBackground: solidify($statusBarItem.errorBackground, 30)
@@ -300,7 +300,7 @@ theme:
       highlightForeground: $std.fg.accent.secondary
       filterMatchBackground: $std.bg.accent.faint
       filterMatchBorder: $std.outline.strong
-      errorForeground: $std.fg.status.error
+      errorForeground: complement($std.fg.status.error)
       warningForeground: $std.fg.status.warning
       invalidItemForeground: $std.fg.status.error
       deemphasizedForeground: $std.fg.inactive
@@ -357,7 +357,7 @@ theme:
       unfocusedHoverBorder: $std.outline.faint
       lastPinnedBorder: $tab.activeBorderTop
       # Modified Indicator
-      activeModifiedBorder: fade($status.added, 0.2)
+      activeModifiedBorder: fade($status.modified, 0.2)
       inactiveModifiedBorder: fade($tab.activeModifiedBorder, 0.4)
       unfocusedActiveModifiedBorder: fade($tab.activeModifiedBorder, 0.2)
       unfocusedInactiveModifiedBorder: fade($tab.inactiveModifiedBorder, 0.2)
@@ -517,10 +517,10 @@ theme:
       warningForeground: $status.warning
       infoForeground: $status.info
       bracketMatchForeground: $std.fg.accent.base
-      inlineChatInserted: darken($std.bg.status.success, 50)
-      inlineChatRemoved: darken($std.bg.status.error, 50)
+      inlineChatInserted: darken($status.added, 50)
+      inlineChatRemoved: darken($status.deleted, 50)
       currentContentForeground: $std.fg.accent.secondary
-      incomingContentForeground: $std.fg.status.success
+      incomingContentForeground: $status.added
       commonContentForeground: $std.fg.status.info
 
     # Editor Diagnostics
@@ -947,34 +947,34 @@ theme:
         successfulBackground: fade($accent.base, 0.13)
         background: $std.bg.panel.outer.active
       originalBackground: fade($accent.base, 0.20)
-      modifiedBackground: fade($$teal, 0.20)
+      modifiedBackground: fade($status.modified, 0.20)
       originalChangedLineBackground: fade($accent.base, 0.27)
       originalChangedTextBackground: fade($accent.base, 0.20)
       modifiedChangedLineBackground: fade($accent.base, 0.20)
-      modifiedChangedTextBackground: fade($$teal, 0.27)
+      modifiedChangedTextBackground: fade($status.modified, 0.27)
       originalBorder: $accent.base
-      modifiedBorder: $$teal
+      modifiedBorder: $status.modified
       tabWillAcceptModifiedBorder: $status.success
       tabWillAcceptOriginalBorder: $status.success
 
     # Diff editor colors
     # Diff Editor: Inserted/Removed Text
     diffEditor:
-      insertedTextBackground: fade($status.success, 0.80)
-      insertedTextBorder: fade($status.success, 0.80)
-      removedTextBackground: fade($status.error, 0.80)
-      removedTextBorder: fade($status.error, 0.80)
+      insertedTextBackground: fade($status.added, 0.80)
+      insertedTextBorder: fade($status.added, 0.80)
+      removedTextBackground: fade($status.deleted, 0.80)
+      removedTextBorder: fade($status.deleted, 0.80)
       # Diff Editor: Full Line Highlights
-      insertedLineBackground: fade($status.success, 0.80)
-      removedLineBackground: fade($status.error, 0.80)
+      insertedLineBackground: fade($status.added, 0.80)
+      removedLineBackground: fade($status.deleted, 0.80)
 
     diffEditorGutter:
-      insertedLineBackground: fade($status.success, 0.70)
-      removedLineBackground: fade($status.error, 0.70)
+      insertedLineBackground: fade($status.added, 0.70)
+      removedLineBackground: fade($status.deleted, 0.70)
 
     diffEditorOverview:
-      insertedForeground: fade($status.success, 0.53)
-      removedForeground: fade($status.error, 0.53)
+      insertedForeground: fade($status.added, 0.53)
+      removedForeground: fade($status.deleted, 0.53)
 
     # Inline Chat colors
     inlineChat:
@@ -990,8 +990,8 @@ theme:
       placeholderForeground: $std.fg.inactive
 
     inlineChatDiff:
-      inserted: fade($status.success, 0.13)
-      removed: fade($status.error, 0.13)
+      inserted: fade($status.added, 0.13)
+      removed: fade($status.deleted, 0.13)
 
     # Panel Chat colors
     interactive:
