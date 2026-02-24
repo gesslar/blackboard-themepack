@@ -1,4 +1,5 @@
-# Variables for later substitution
+# variables.yaml
+
 vars:
   std:
     fg:

@@ -1,3 +1,5 @@
+#palette-dark.yaml
+
 palette:
   black: oklch(0.1286 0 0)
   blue: oklch(0.6112 0.0756 246.61)
@@ -13,20 +15,6 @@ palette:
   teal: oklch(0.6 0.05 240)
   white: oklch(0.8 0 90)
   yellow: oklch(0.921 0.1074 98.1)
-
-  tc:
-    grey: oklch(.55 0 0 / 95%)
-    green: oklch(0.579 0.052 127.1 / 95%)
-    blue: oklch(0.556 0.044 255.3 / 95%)
-    pink: oklch(0.4824 0.0735 7.09 / 95%)
-    orange: oklch(0.673 0.069 79.6 / 95%)
-    red: oklch(0.6318 0.0418 25.1 / 95%)
-    pink2: oklch(0.56 0.08 353.81 / 95%)
-    peach: oklch(0.619 0.088 25.8 / 95%)
-    yellow: oklch(0.803 0.077 103.6 / 95%)
-    purple: oklch(0.5146 0.1314 307.3 / 95%)
-    gold: oklch(0.8 0.0976 90 / 95%)
-    white: oklch(0.7952 0 0 / 95%)
 
   ansi:
     black: "#555555"

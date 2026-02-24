@@ -1,31 +1,8 @@
+# theme-semanticTokenColors.yaml
+
 theme:
   semanticTokenColors:
-    class:
-      foreground: $function
-      fontStyle: italic
-    comment-block-preprocessor: $comment
-    comment: $scope.comment
-    decorator: lighten($comment, 25)
-    enum: $scope.constant
-    enumMember: $scope.number
-    function: $scope.function
-    interface: $scope.selfRef
-    keyword: $scope.keyword
-    label: $$red
-    macro: $variable
-    method: $function
-    namespace:
-      foregrond: $class.foreground
-      fontStyle: $class.fontStyle
-    number: $scope.number
-    operator: $scope.operator
-    parameter: $scope.parameter
-    property: $scope.property
-    regexp: $scope.string
-    string: $scope.string
-    struct:
-      foregrond: $class.foreground
-      fontStyle: $class.fontStyle
-    type: $scope.types
-    typeParameter: $scope.property
-    variable: $scope.variable
+    newOperator: $$tc.controlFlow
+    stringLiteral: $$tc.string
+    customLiteral: $$tc.functionName
+    numberLiteral: $$tc.numericConstant

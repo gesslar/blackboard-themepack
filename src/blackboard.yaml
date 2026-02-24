@@ -1,4 +1,5 @@
-# Theme Config
+# Theme Config - blackboard
+
 config:
   $schema: vscode://schemas/color-theme
   name: blackboard
@@ -8,7 +9,6 @@ config:
     - ./import/palette-$(type).yaml
     - ./import/variables.yaml
     - ./import/theme-colors.yaml
-    - ./import/scope-$(type).yaml
     - ./import/theme-tokenColors-$(type).yaml
     - ./import/theme-semanticTokenColors-$(type).yaml
 
