@@ -8,7 +8,7 @@ config:
   import:
     - ./import/palette-$(type).yaml
     - ./import/variables.yaml
-    - ./import/theme-colors.yaml
+    - ./import/theme-colors-$(type).yaml
     - ./import/theme-tokenColors-$(type).yaml
     - ./import/theme-semanticTokenColors-$(type).yaml
 
@@ -17,19 +17,9 @@ config:
     colorSpaceName: sRGB
 
 vars:
-  main: $$white
-  inverse: invert($main)
-
-  # The following define primary basics that can be relied upon by the
-  # variables definitions. Dark and light themes will define these
-  # differently. Anything expressed here will override anything being
-  # imported.
-  fg:
-    main: $main
-
   variant:
-    fg: $main
+    fg: $$white
     bg: $$black
     accent: $$pink
-    accentSecondary: darken($variant.accent, 60)
+    accentSecondary: desaturate($variant.accent, 35)
     shadow: alpha($variant.accent, 0.25)

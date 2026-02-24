@@ -16,3 +16,4 @@ eslint.config.js
 .github/
 .claude/
 work/
+vsix/

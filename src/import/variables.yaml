@@ -5,7 +5,7 @@ vars:
     fg:
       base: $variant.fg
       hover: $variant.fg
-      inverse: invert($std.fg.base)
+      inverse: complement($std.fg.base)
       secondary: darken($std.fg.base, 5)
       inactive: darken($std.fg.base, 25)
       faint: fade($std.fg.base, 0.53)
@@ -16,15 +16,15 @@ vars:
         secondary: lighten($accent.secondary, 50)
         secondary.faint: fade(lighten($std.fg.accent.secondary, 30), 0.50)
       status:
-        success: $std.fg.base
-        warning: $std.fg.base
-        info: $status.info
-        error: $status.error
+        success: shiftHue($std.fg.base, 180)
+        warning: shiftHue($std.fg.base, 180)
+        info: shiftHue($status.info, 180)
+        error: shiftHue($status.error, 180)
       badge: lighten($accent.base, 25)
 
     bg:
       base: $variant.bg
-      inverse: invert($std.bg.base)
+      inverse: complement($std.bg.base)
       faint: fade($std.bg.accent.base, 0.40)
       inactive: darken($std.bg.base, 15)
       badge: darken($accent.base, 40)
@@ -40,10 +40,10 @@ vars:
         faint: fade($std.bg.hover.base, 0.25)
         whisper: fade($std.bg.hover.faint, 0.5)
       status:
-        success: $status.success
-        warning: $status.warning
-        info: $status.info
-        error: $status.error
+        success: darken($status.success, 15)
+        warning: darken($status.warning, 15)
+        info: darken($status.info, 15)
+        error: darken($status.error, 15)
       drop: fade($accent.base, 0.75)
       sticky:
         base: fade($std.bg.base, 0.10)
@@ -62,12 +62,12 @@ vars:
 
     highlight:
       fg:
-        accent: invert($std.highlight.bg.accent)
-        read: invert($std.highlight.bg.read)
-        write: invert($std.highlight.bg.write)
-        delete: invert($std.highlight.bg.delete)
-        rename: invert($std.highlight.bg.rename)
-        error: invert($std.highlight.bg.error)
+        accent: complement($std.highlight.bg.accent)
+        read: complement($std.highlight.bg.read)
+        write: complement($std.highlight.bg.write)
+        delete: complement($std.highlight.bg.delete)
+        rename: complement($std.highlight.bg.rename)
+        error: complement($std.highlight.bg.error)
         match: $transparent
       bg:
         accent: alpha($std.bg.accent.base, 0.25)
@@ -106,10 +106,10 @@ vars:
     warning: $$orange
     error: $$red
 
-    added: lighten($status.success, 20)
-    modified: lighten($status.warning, 20)
-    deleted: lighten($status.error, 20)
-    ignored: darken($main, 50)
+    added: darken($status.success, 35)
+    modified: desaturate($status.warning, 40)
+    deleted: desaturate($status.error, 15)
+    ignored: darken($std.fg.base, 40)
 
   ops:
     read: $$green
@@ -129,7 +129,7 @@ vars:
 
     fg:
       base: $$white
-      inverse: invert($control.fg.base)
+      inverse: complement($control.fg.base)
       secondary:
         normal: $control.fg.base
         hover: $control.fg.base
