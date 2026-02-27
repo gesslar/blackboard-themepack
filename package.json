@@ -91,7 +91,7 @@
     "id": "blackboard-theme"
   },
   "devDependencies": {
-    "@gesslar/uglier": "^1.6.2",
+    "@gesslar/uglier": "^2.0.0",
     "@vscode/vsce": "^3.7.1",
     "eslint": "^10.0.2",
     "ovsx": "^0.10.9"
