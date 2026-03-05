@@ -2,7 +2,7 @@
 
 theme:
   semanticTokenColors:
-    newOperator: $$tc.controlFlow
-    stringLiteral: $$tc.string
-    customLiteral: $$tc.functionName
-    numberLiteral: $$tc.numericConstant
+    operator: $$tc.controlFlow
+    string: $$tc.string
+    function: $$tc.functionName
+    number: $$tc.numericConstant
