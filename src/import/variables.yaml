@@ -16,10 +16,10 @@ vars:
         secondary: lighten($accent.secondary, 50)
         secondary.faint: fade(lighten($std.fg.accent.secondary, 30), 0.50)
       status:
-        success: shiftHue($std.fg.base, 180)
-        warning: shiftHue($std.fg.base, 180)
-        info: shiftHue($status.info, 180)
-        error: shiftHue($status.error, 180)
+        success: mute($status.success, 50)
+        warning: mute($status.warning, 50)
+        info: mute($status.info, 50)
+        error: mute($status.error, 50)
       badge: lighten($accent.base, 25)
 
     bg:
@@ -40,10 +40,10 @@ vars:
         faint: fade($std.bg.hover.base, 0.25)
         whisper: fade($std.bg.hover.faint, 0.5)
       status:
-        success: darken($status.success, 15)
-        warning: darken($status.warning, 15)
-        info: darken($status.info, 15)
-        error: darken($status.error, 15)
+        success: darken($status.success,30)
+        warning: darken($status.warning,30)
+        info: darken($status.info,30)
+        error: darken($status.error,30)
       drop: fade($accent.base, 0.75)
       sticky:
         base: fade($std.bg.base, 0.10)
@@ -101,10 +101,10 @@ vars:
     shadow.sticky: fade($shadow, 0.25)
 
   status:
-    success: $$green
-    info: $$teal
-    warning: $$orange
-    error: $$red
+    success: mute($$green, 25)
+    info: mute($$teal, 25)
+    warning: mute($$orange, 25)
+    error: mute($$red, 25)
 
     added: darken($status.success, 35)
     modified: desaturate($status.warning, 40)

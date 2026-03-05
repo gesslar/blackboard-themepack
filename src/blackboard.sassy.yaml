@@ -4,6 +4,7 @@ config:
   $schema: vscode://schemas/color-theme
   name: blackboard
   type: dark
+  output: ../dist
 
   import:
     - ./import/palette-$(type).yaml

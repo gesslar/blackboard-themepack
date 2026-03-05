@@ -48,27 +48,6 @@
         "id": "corporate",
         "uiTheme": "vs-dark",
         "path": "dist/corporate.color-theme.json"
-      },
-      {
-        "label": "Blackboard - Hushed",
-        "description": "*paff* *paff* *paff*",
-        "id": "blackboard-hushed",
-        "uiTheme": "vs-dark",
-        "path": "dist/blackboard-hushed.color-theme.json"
-      },
-      {
-        "label": "Bubblegum Goth - Hushed",
-        "description": "*dramatic sigh*",
-        "id": "bubblegum-goth-hushed",
-        "uiTheme": "vs-dark",
-        "path": "dist/bubblegum-goth-hushed.color-theme.json"
-      },
-      {
-        "label": "Corporate - Hushed",
-        "description": "If this doesn't work, try adding a chart.",
-        "id": "corporate-hushed",
-        "uiTheme": "vs-dark",
-        "path": "dist/corporate-hushed.color-theme.json"
       }
     ]
   },
