@@ -73,6 +73,6 @@
     "@gesslar/uglier": "^2.2.0",
     "@vscode/vsce": "^3.7.1",
     "eslint": "^10.1.0",
-    "ovsx": "^0.10.9"
+    "ovsx": "^0.10.10"
   }
 }
