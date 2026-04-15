@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@gesslar/uglier": "^2.4.1",
-    "@vscode/vsce": "^3.7.1",
+    "@vscode/vsce": "^3.8.0",
     "eslint": "^10.2.0",
     "ovsx": "^0.10.11"
   }
