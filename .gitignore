@@ -8,3 +8,5 @@ node_modules/
 .claude/
 work/
 vsix/
+tmp/
+dist/

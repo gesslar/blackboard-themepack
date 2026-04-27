@@ -1,9 +1,10 @@
 # Theme Config - corporate
 
 config:
-  schema: vscode://schemas/color-theme
+  $schema: vscode://schemas/color-theme
   name: corporate
   type: dark
+  output: ../dist
 
   import:
     - ./import/palette-$(type).yaml

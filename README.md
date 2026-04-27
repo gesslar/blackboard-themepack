@@ -199,13 +199,14 @@ eating a banana beneath a parasol. Don't tell mom.
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-## License
-
-Blackboard Theme Pack is licensed under the [Unlicense](https://unlicense.org) -
-Because the idea of copyrighting the arrangement of colours is absurd. If you
-think otherwise, gg `¯\_(ツ)_/¯`.
-
 ## Caveat 2
 
 For topical use only; consult Lauren Boebert if your eyerection endures longer
 than four (4) hours.
+
+## License
+
+`blackboard-themepack` is released under the [0BSD](LICENSE).
+
+Because the idea of copyrighting the arrangement of colours is absurd. If you
+think otherwise, gg `¯\_(ツ)_/¯`.
