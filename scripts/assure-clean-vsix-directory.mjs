@@ -11,14 +11,13 @@
  * If [dir] is omitted, defaults to "vsix/" relative to cwd.
  */
 
-import {DirectoryObject} from "@gesslar/toolkit"
+import { DirectoryObject } from "@gesslar/toolkit"
 
-const target = process.argv[2] || "vsix"
+const input = process.argv[2] || "vsix"
+const target = new DirectoryObject(input)
 
 try {
-  const dir = new DirectoryObject(target)
-
-  if(await dir.exists) {
+  if(await target.exists) {
     const rmdir = async d => {
       const {files, directories} = await d.read()
 
@@ -26,31 +25,16 @@ try {
         await file.delete()
 
       for(const directory of directories)
-        await rmdir(directory)
+        await directory.delete()
+
       await d.delete()
-      await directory.delete()
     }
 
-    await rmdir(dir)
+    await rmdir(target)
   }
 
-  if(existsSync(target)) {
-    const stats = statSync(target)
-
-    if(!stats.isDirectory()) {
-      console.error(`'${target}' is not a directory.`)
-      process.exit(1)
-    }
-  } else {
-    mkdirSync(target)
-  }
-} catch {
+  await target.assureExists()
+} catch(e) {
+  console.error(e.message)
   process.exit(1)
-}
-
-const vsixFiles = readdirSync(target).filter(f => f.endsWith(".vsix"))
-
-for(const file of vsixFiles) {
-  console.log(`Removing ${file}`)
-  unlinkSync(join(target, file))
 }
