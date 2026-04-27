@@ -4,16 +4,15 @@
   "description": "Classic blackboard aesthetics for night coding - chalk on slate with electric blue accents",
   "version": "2.1.0",
   "publisher": "gesslar",
-  "license": "Unlicense",
+  "license": "0BSD",
   "engines": {
-    "vscode": ">=1.50.0"
+    "vscode": ">=1.111.0"
   },
-  "packageManager": "npm@11.11.0",
   "scripts": {
     "watch": "npx @gesslar/sassy build -wo ./dist ./src/*.yaml",
     "build": "npx @gesslar/sassy build -o ./dist ./src/*.yaml",
     "lint-blackboard": "npx @gesslar/sassy lint ./src/blackboard.yaml",
-    "package": "npx @gesslar/sassy build -o ./dist ./src/*.yaml && npx @vscode/vsce package --no-dependencies --skip-license -o vsix/",
+    "package": "node scripts/assure-clean-vsix-directory.js && npm run build && npx @vscode/vsce package --no-dependencies --skip-license -o vsix/",
     "publish:vsce": "npm run package && xdg-open https://marketplace.visualstudio.com/manage/publishers/gesslar",
     "publish:ovsx": "npm run package && xdg-open https://open-vsx.org/user-settings/extensions",
     "update": "npx npm-check-updates -u && npm install",
@@ -64,15 +63,18 @@
     "night",
     "blue",
     "pink",
-    "sassy"
+    "sassy",
+    "but",
+    "gui"
   ],
   "__metadata": {
     "id": "blackboard-theme"
   },
   "devDependencies": {
+    "@gesslar/toolkit": "^5.2.0",
     "@gesslar/uglier": "^2.4.1",
-    "@vscode/vsce": "^3.9.1",
+    "@vscode/vsce": "^2.25.0",
     "eslint": "^10.2.1",
-    "ovsx": "^0.10.11"
+    "ovsx": "^0.9.4"
   }
 }

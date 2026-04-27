@@ -110,7 +110,8 @@ theme:
         foreground: $$tc.cssSelector
 
     - name: HTML/XML tag names
-      scope: entity.name.tag
+      scope:
+        - entity.name.tag
       settings:
         foreground: $$tc.tagName
 

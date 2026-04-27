@@ -4,6 +4,7 @@ config:
   $schema: vscode://schemas/color-theme
   name: bubblegum-goth
   type: dark
+  output: ../dist
 
   import:
     - ./import/palette-$(type).yaml
