@@ -72,7 +72,7 @@
     "id": "blackboard-theme"
   },
   "devDependencies": {
-    "@gesslar/toolkit": "^5.2.0",
+    "@gesslar/toolkit": "^5.4.0",
     "@gesslar/uglier": "^2.4.1",
     "@vscode/vsce": "^3.9.1",
     "eslint": "^10.3.0",
