@@ -923,7 +923,7 @@ theme:
       background: $std.bg.accent.faint
       border: $std.outline.faint
     textCodeBlock:
-      background: $std.bg.accent.faint
+      background: $std.bg.accent.whisper
     textLink:
       foreground: $std.fg.accent.secondary
       activeForeground: $accent.secondary

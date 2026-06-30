@@ -7,11 +7,11 @@ config:
   output: ../dist
 
   import:
-    - ./import/palette-$(type).yaml
-    - ./import/variables.yaml
-    - ./import/theme-colors-$(type).yaml
-    - ./import/theme-tokenColors-$(type).yaml
-    - ./import/theme-semanticTokenColors-$(type).yaml
+    - ./dark/palette.yaml
+    - ./dark/variables.yaml
+    - ./dark/theme-colors.yaml
+    - ./dark/theme-tokenColors.yaml
+    - ./dark/theme-semanticTokenColors.yaml
 
   custom:
     semanticHighlighting: true

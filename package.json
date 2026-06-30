@@ -2,25 +2,26 @@
   "name": "blackboard-themepack",
   "displayName": "Blackboard Theme Pack",
   "description": "Classic blackboard aesthetics for night coding - chalk on slate with electric blue accents",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "publisher": "gesslar",
   "license": "0BSD",
   "engines": {
     "vscode": ">=1.111.0"
   },
   "scripts": {
-    "watch": "npx @gesslar/sassy build -wo ./dist ./src/*.yaml",
-    "build": "npx @gesslar/sassy build -o ./dist ./src/*.yaml",
-    "lint-blackboard": "npx @gesslar/sassy lint ./src/blackboard.sassy.yaml",
-    "lint-corporate": "npx @gesslar/sassy lint ./src/corporate.sassy.yaml",
-    "lint-bubblegum-goth": "npx @gesslar/sassy lint ./src/bubblegum-goth.sassy.yaml",
-    "package": "node scripts/assure-clean-vsix-directory.mjs && npm run build && npx @vscode/vsce package --no-dependencies --skip-license -o vsix/",
-    "publish:vsce": "npm run package && npx @vscode/vsce publish --packagePath vsix/*.vsix --pat $VSX_MARKETPLACE_ACCESS_TOKEN",
-    "publish:ovsx": "npm run package && npx ovsx publish --packagePath vsix/*.vsix --pat $OVSX_ACCESS_TOKEN",
+    "watch": "npx -y @gesslar/sassy build -wo ./dist ./src/*.yaml",
+    "build": "npx -y @gesslar/sassy build -o ./dist ./src/*.yaml",
+    "lint-blackboard": "npx -y @gesslar/sassy lint ./src/blackboard.sassy.yaml",
+    "lint-corporate": "npx -y @gesslar/sassy lint ./src/corporate.sassy.yaml",
+    "lint-bubblegum-goth": "npx -y @gesslar/sassy lint ./src/bubblegum-goth.sassy.yaml",
+    "package": "node scripts/assure-clean-vsix-directory.mjs && npm run build && npx -y @vscode/vsce package --no-dependencies --skip-license -o vsix/",
+    "publish:vsce": "npm run package && npx -y @vscode/vsce publish --packagePath vsix/*.vsix --pat $VSX_MARKETPLACE_ACCESS_TOKEN",
+    "publish:ovsx": "npm run package && npx -y ovsx publish --packagePath vsix/*.vsix --pat $OVSX_ACCESS_TOKEN",
     "pr": "gt submit -p --ai",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major"
+    "major": "npm version major",
+    "update": "npx -y npm-check-updates -u && npm install"
   },
   "categories": [
     "Themes"
@@ -73,9 +74,10 @@
   },
   "devDependencies": {
     "@gesslar/toolkit": "^5.8.0",
+    "@gesslar/toolkit": "^5.8.0",
     "@gesslar/uglier": "^2.4.1",
     "@vscode/vsce": "^3.9.2",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "ovsx": "^1.0.2"
   }
 }
