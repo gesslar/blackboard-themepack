@@ -2,7 +2,7 @@
   "name": "blackboard-themepack",
   "displayName": "Blackboard Theme Pack",
   "description": "Classic blackboard aesthetics for night coding - chalk on slate with electric blue accents",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "publisher": "gesslar",
   "license": "0BSD",
   "engines": {
@@ -73,11 +73,10 @@
     "id": "blackboard-theme"
   },
   "devDependencies": {
-    "@gesslar/toolkit": "^5.8.0",
-    "@gesslar/toolkit": "^5.8.0",
+    "@gesslar/toolkit": "^5.9.1",
     "@gesslar/uglier": "^2.4.1",
     "@vscode/vsce": "^3.9.2",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "ovsx": "^1.0.2"
   }
 }
