@@ -454,12 +454,12 @@ theme:
       foreground: darken($std.fg.accent.whisper, 45) # Whitespace characters (spaces, tabs, etc.) when enabled
     # Indent Guides
     editorIndentGuide:
-      background1: alpha($std.line.base, .55)
-      background2: darken($editorIndentGuide.background1, 5)
-      background3: darken($editorIndentGuide.background2, 5)
-      background4: darken($editorIndentGuide.background3, 5)
-      background5: darken($editorIndentGuide.background4, 5)
-      background6: darken($editorIndentGuide.background5, 5)
+      background1: darken($std.line.base, 60)
+      background2: darken($editorIndentGuide.background1, 10)
+      background3: darken($editorIndentGuide.background2, 10)
+      background4: darken($editorIndentGuide.background3, 10)
+      background5: darken($editorIndentGuide.background4, 10)
+      background6: darken($editorIndentGuide.background5, 10)
       activeBackground1: lighten($editorIndentGuide.background1, 25)
       activeBackground2: lighten($editorIndentGuide.background1, 25)
       activeBackground3: lighten($editorIndentGuide.background1, 25)
@@ -1079,16 +1079,6 @@ theme:
 
     simpleFindWidget:
       sashBorder: $test
-
-    # Gauge colors
-    gauge:
-      background: $std.bg.panel.outer.active
-      foreground: $status.success
-      border: fade($accent.base, 0.20)
-      warningBackground: darken($status.warning, 60)
-      warningForeground: $$yellow
-      errorBackground: darken($status.error, 60)
-      errorForeground: $status.error
 
     # Keybinding label colors
     keybindingLabel:
